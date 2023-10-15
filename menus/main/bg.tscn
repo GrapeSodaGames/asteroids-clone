@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://nxpha35dbekq"]
+
+[ext_resource type="Script" path="res://menus/main/bg.gd" id="1_yr2tl"]
+[ext_resource type="Texture2D" uid="uid://c51y4pa6jhm1j" path="res://assets/Backgrounds/darkPurple.png" id="2_i5a04"]
+
+[node name="BG" type="ParallaxBackground"]
+script = ExtResource("1_yr2tl")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(256, 256)
+
+[node name="DarkPurple" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("2_i5a04")
+centered = false
+
+[node name="DarkPurple2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(512, 0)
+texture = ExtResource("2_i5a04")
+centered = false
+
+[node name="DarkPurple3" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(0, 512)
+texture = ExtResource("2_i5a04")
+centered = false
+
+[node name="DarkPurple4" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(512, 512)
+texture = ExtResource("2_i5a04")
+centered = false
+
+[node name="DarkPurple5" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1024, 0)
+texture = ExtResource("2_i5a04")
+centered = false
+
+[node name="DarkPurple6" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1024, 512)
+texture = ExtResource("2_i5a04")
+centered = false
