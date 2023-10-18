@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtwpox6aj4xel"]
+
+[ext_resource type="Script" path="res://bullets/bullet.gd" id="1_dx5dr"]
+[ext_resource type="Texture2D" uid="uid://b2q24badfx65e" path="res://bullets/bullet01/laserBlue08.png" id="1_sfa2r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tabxy"]
+
+[sub_resource type="Animation" id="Animation_lc6at"]
+resource_name = "torpedo"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hchhi"]
+_data = {
+"torpedo": SubResource("Animation_lc6at")
+}
+
+[node name="bullet01" type="RigidBody2D"]
+script = ExtResource("1_dx5dr")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tabxy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hchhi")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_sfa2r")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
